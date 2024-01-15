@@ -1,0 +1,108 @@
+[
+    {
+        "title": "Vegetarian Lentil Soup",
+        "ingredients": [
+            "Lentils",
+            "Onions",
+            "Carrots",
+            "Celery",
+            "Garlic",
+            "Tomatoes",
+            "Vegetable broth",
+            "Cumin",
+            "Coriander",
+            "Bay leaves"
+        ],
+        "instructions": [
+            "Rinse lentils and set aside.",
+            "In a large pot, sauté chopped onions, garlic, carrots, and celery until softened.",
+            "Add cumin, coriander, and bay leaves. Stir well.",
+            "Pour in vegetable broth and add rinsed lentils. Bring to a boil.",
+            "Reduce heat and simmer until lentils are tender, about 20-25 minutes.",
+            "Stir in diced tomatoes and continue to simmer for an additional 10 minutes.",
+            "Season with salt and pepper to taste. Remove bay leaves before serving."
+        ],
+        "image": "https://images.unsplash.com/photo-1530734575165-ce39d996fbaa?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "title": "Spaghetti Aglio e Olio",
+        "ingredients": [
+            "Spaghetti",
+            "Garlic",
+            "Olive oil",
+            "Red pepper flakes",
+            "Parsley",
+            "Parmesan cheese"
+        ],
+        "instructions": [
+            "Cook spaghetti according to package instructions. Reserve some pasta water.",
+            "In a pan, sauté minced garlic and red pepper flakes in olive oil until fragrant.",
+            "Add cooked spaghetti to the pan. Toss to coat, adding pasta water as needed for desired consistency.",
+            "Season with salt and pepper. Garnish with chopped parsley and Parmesan cheese.",
+            "Serve hot, drizzled with extra olive oil if desired."
+        ],
+        "image": "https://images.unsplash.com/photo-1589227365533-cee630bd59bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "title": "Mango Lassi",
+        "ingredients": [
+            "Mangoes",
+            "Yogurt",
+            "Milk",
+            "Sugar",
+            "Cardamom powder",
+            "Ice cubes"
+        ],
+        "instructions": [
+            "Peel and dice ripe mangoes.",
+            "In a blender, combine mango chunks, yogurt, milk, sugar, and cardamom powder.",
+            "Blend until smooth and creamy.",
+            "Add ice cubes and blend again until the lassi is chilled and frothy.",
+            "Pour into glasses and garnish with a sprinkle of cardamom powder.",
+            "Serve immediately and enjoy this refreshing mango lassi!"
+        ],
+        "image": "https://images.unsplash.com/photo-1527406619566-0159590b8540?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "title": "Caprese Salad",
+        "ingredients": [
+            "Tomatoes",
+            "Fresh mozzarella",
+            "Basil leaves",
+            "Balsamic vinegar",
+            "Olive oil",
+            "Salt",
+            "Black pepper"
+        ],
+        "instructions": [
+            "Slice tomatoes and fresh mozzarella into 1/4-inch thick slices.",
+            "Arrange tomato and mozzarella slices alternately on a serving platter.",
+            "Tuck fresh basil leaves between the tomato and mozzarella slices.",
+            "Drizzle with balsamic vinegar and olive oil.",
+            "Season with salt and black pepper to taste.",
+            "Serve immediately for a simple and refreshing Caprese Salad!"
+        ],
+        "image": "https://images.unsplash.com/photo-1518133683791-0b9de5a055f0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "title": "Grilled Salmon with Lemon-Dill Sauce",
+        "ingredients": [
+            "Salmon fillets",
+            "Lemon",
+            "Dill",
+            "Olive oil",
+            "Garlic powder",
+            "Salt",
+            "Black pepper"
+        ],
+        "instructions": [
+            "Preheat the grill to medium-high heat.",
+            "Season salmon fillets with olive oil, garlic powder, salt, and black pepper.",
+            "Grill salmon for about 4-5 minutes per side or until it easily flakes with a fork.",
+            "In a small bowl, mix together chopped dill and lemon juice to make the sauce.",
+            "Drizzle the lemon-dill sauce over the grilled salmon before serving.",
+            "Garnish with lemon wedges and fresh dill, and enjoy!"
+        ],
+        "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+]

@@ -1,13 +1,13 @@
 'use client'
 /*
     Description: This is Error page .it will show up when and error occurs
-    
-*/
 
+*/
 
 import { useEffect } from 'react'
 
 const Error = ({ error, reset }) => {
+
     useEffect(() => {
 
         console.error(error)
@@ -15,13 +15,10 @@ const Error = ({ error, reset }) => {
 
     return (
         <div>
-            <h2>Something went wrong!</h2>
+            <h2>Something went wrong with add meal page baire!</h2>
             <button
                 onClick={
-                    // Attempt to recover by trying to re-render the segment
-                    () => reset()
-                }
-            >
+                    () => reset()}  >
                 Try again
             </button>
         </div>
