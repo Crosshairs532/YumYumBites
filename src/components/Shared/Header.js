@@ -3,6 +3,7 @@ import React from "react";
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import { Syne } from "next/font/google";
 import {
     Navbar,
     Collapse,
@@ -33,33 +34,20 @@ import {
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import { usePathname } from "next/navigation";
-
+import Link from "next/link";
+const syne = Syne({
+    subsets: ['latin']
+})
 
 
 function NavList() {
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className=""
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">Meals</ListItem>
-            </Typography>
+            <ListItem className={`${syne.className} font-medium flex items-center justify-center gap-2 py-2 pr-4`}><Link href={'/'}>Meals</Link></ListItem>
+            <ListItem className={`${syne.className} font-medium flex items-center justify-center gap-2 py-2 pr-4`}>
+                <Link href={'/addMeal'}> Add Meals</Link>
+            </ListItem>
 
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className=""
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    Add Meals
-                </ListItem>
-            </Typography>
         </List>
     );
 }
@@ -118,59 +106,59 @@ const Header = () => {
     }, []);
 
     return (
-        <Navbar color={path == '/' ? "transparent" : ''} className="mx-auto max-w-screen-xl px-4 py-2">
-            <div className="flex items-center justify-between text-orange-700">
-                <Typography
-                    as="a"
-                    href="#"
-                    variant="h6"
-                    className="mr-4 cursor-pointer py-1.5 lg:ml-2"
-                >
-                    YumYumBites
-                </Typography>
-                <div className="hidden lg:block">
+        <div className=" pt-4">
+            <Navbar color="transparent" className="mx-auto max-w-screen-xl px-4 py-2">
+                <div className="flex items-center justify-between text-orange-700">
+                    <Typography
+                        variant="h4"
+                        className="mr-4  cursor-pointer  lg:ml-2"
+                    >
+                        YumYumBites
+                    </Typography>
+                    <div className="hidden lg:block">
+                        <NavList />
+                    </div>
+                    <div className="hidden gap-2 lg:flex">
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Search good food"
+                                inputProps={{ 'aria-label': 'search food recipies' }}
+                            />
+                        </Search>
+                    </div>
+                    <IconButton
+                        variant="text"
+                        color="blue-gray"
+                        className="lg:hidden"
+                        onClick={() => setOpenNav(!openNav)}
+                    >
+                        {openNav ? (
+                            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+                        ) : (
+                            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+                        )}
+                    </IconButton>
+                </div>
+                <Collapse open={openNav}>
                     <NavList />
-                </div>
-                <div className="hidden gap-2 lg:flex">
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search good food"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
-                </div>
-                <IconButton
-                    variant="text"
-                    color="blue-gray"
-                    className="lg:hidden"
-                    onClick={() => setOpenNav(!openNav)}
-                >
-                    {openNav ? (
-                        <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-                    ) : (
-                        <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-                    )}
-                </IconButton>
-            </div>
-            <Collapse open={openNav}>
-                <NavList />
 
-                <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
-                </div>
-            </Collapse>
-        </Navbar>
+                    <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                                placeholder="Search…"
+                                inputProps={{ 'aria-label': 'search' }}
+                            />
+                        </Search>
+                    </div>
+                </Collapse>
+            </Navbar>
+        </div>
     );
 }
 
