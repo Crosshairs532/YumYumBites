@@ -1,5 +1,4 @@
 import Loader from "@/utils/Loader";
-
 const loading = () => {
     return (
         <div className=" min-h-screen flex justify-center items-center">
@@ -7,4 +6,5 @@ const loading = () => {
         </div>
     );
 };
+
 export default loading;

@@ -1,9 +1,5 @@
-// // import axios from 'axios';
-// import ingredients from '../../ingredients.json'
-
-// export const getRecipes = async () => {
-
-//     const res = await fetch(`../../ingredients.json`);
-//     console.log(res);
-//     return res.json();
-// }
+import axios from 'axios';
+export const getRecipes = async () => {
+    const res = await axios.get(`http://localhost:4000/all_recipes`);
+    return res.data;
+}

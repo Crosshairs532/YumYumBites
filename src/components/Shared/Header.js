@@ -41,6 +41,8 @@ const syne = Syne({
 
 
 function NavList() {
+    const path = usePathname();
+    console.log(path);
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
             <ListItem className={`${syne.className} font-medium flex items-center justify-center gap-2 py-2 pr-4`}><Link href={'/'}>Meals</Link></ListItem>
@@ -107,7 +109,7 @@ const Header = () => {
 
     return (
         <div className=" pt-4">
-            <Navbar color="transparent" className="mx-auto max-w-screen-xl px-4 py-2">
+            <Navbar color="transparent" className="mx-auto max-w-screen-sm md:max-w-screen-md lg:max-w-screen-2xl px-4 py-2">
                 <div className="flex items-center justify-between text-orange-700">
                     <Typography
                         variant="h4"
