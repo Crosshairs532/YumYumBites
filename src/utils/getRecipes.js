@@ -1,5 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
 export const getRecipes = async () => {
-    const res = await axios.get(`http://localhost:4000/all_recipes`);
-    return res.data;
+    const res = await fetch(`http://localhost:4000/all_recipes`, {
+        next: {
+            tags: ['recipes']
+        }
+    });
+    const data = await res.json();
+    return data;
 }

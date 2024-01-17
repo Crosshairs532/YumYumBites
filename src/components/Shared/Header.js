@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -95,12 +95,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-
 const Header = () => {
     const [openNav, setOpenNav] = React.useState(false);
     const path = usePathname();
+    const [searchValue, setSearchValue] = useState('');
 
-    React.useEffect(() => {
+    const handleInputChange = (event) => {
+        console.log(event.target.value);
+        setSearchValue(event.target.value);
+    };
+
+    useEffect(() => {
         window.addEventListener(
             "resize",
             () => window.innerWidth >= 960 && setOpenNav(false),
@@ -127,7 +132,9 @@ const Header = () => {
                             </SearchIconWrapper>
                             <StyledInputBase
                                 placeholder="Search good food"
-                                inputProps={{ 'aria-label': 'search food recipies' }}
+                                inputProps={{ 'aria-label': 'search food recipes' }}
+                                value={searchValue}
+                                onChange={handleInputChange}
                             />
                         </Search>
                     </div>

@@ -6,13 +6,11 @@
 
 
 import Delete from "@/components/Delete";
-import Button from "@/components/Delete";
 import Edit from "@/components/Edit";
 import { getRecipe } from "@/utils/getRecipe";
 import { getRecipes } from "@/utils/getRecipes";
 import Image from "next/image";
 import { Suspense } from "react";
-
 
 const Meal = async ({ params }) => {
     console.log(params);
@@ -28,37 +26,39 @@ const Meal = async ({ params }) => {
                 </h1>
             </div>
             <div className=" edit_delete_button flex justify-between lg:justify-normal items-center gap-x-3 py-4">
-                <Delete id={singleMeal[0]._id} ></Delete>
-                <Edit id={singleMeal[0]._id}></Edit>
+                <Delete recipe_name={singleMeal[0]?.title} id={singleMeal[0]?._id} ></Delete>
+                <Edit singleMeal={singleMeal}></Edit>
             </div>
             <div className=" flex lg:flex-row flex-col gap-y-3 items-start justify-around w-full ">
-                <Suspense fallback={<p>Ingredients loading.....</p>}>
-                    <div className=" ingredients">
-                        <h1 className=" text-xl font-bold mt-3">Ingredients:</h1>
-                        <ul style={{ listStyle: 'disc' }} className=" pl-10">
-                            {
-                                singleMeal[0].ingredients.map((items) => (
-                                    <li key={singleMeal[0]._id}>{items}</li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </Suspense>
-                <Suspense fallback={<h1>Instructions loading.....</h1>}>
-                    <div className="instruction mt-3">
-                        <h1 className=" text-xl font-bold ">Instruction You want to follow:</h1>
-                        <ul className="">
-                            {
+                {/* <Suspense fallback={<p>Ingredients loading.....</p>}> */}
+                <div className=" w-1/2 ingredients">
+                    <h1 className=" text-xl font-bold mt-3">Ingredients:</h1>
+                    <ul style={{ listStyle: 'disc' }} className=" pl-10">
+                        {
+                            singleMeal[0].ingredients.map((items, idx) => (
+                                <li key={idx}>{items}</li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                {/* </Suspense> */}
+                {/* <Suspense fallback={<h1>Instructions loading.....</h1>}> */}
+                <div className="w-1/2 instruction mt-3">
+                    <h1 className=" text-xl font-bold ">Instruction You want to follow:</h1>
+                    <p className="">
+                        {/* {
                                 singleMeal[0].instructions.map((step, idx) => (
 
-                                    <li className=" text-pretty">{`step - ${idx + 1}: ${step}`}</li>
-
+                                    <li key={idx} className=" text-pretty">{`step - ${idx + 1}: ${step}`}</li>
                                 ))
-                            }
+                            } */}
+                        {
+                            singleMeal[0].instructions
+                        }
 
-                        </ul>
-                    </div>
-                </Suspense>
+                    </p>
+                </div>
+                {/* </Suspense> */}
 
             </div>
         </div >
@@ -75,3 +75,5 @@ export async function generateStaticParams() {
         mealName: recipe.tittle
     }))
 }
+
+
