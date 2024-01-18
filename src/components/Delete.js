@@ -1,15 +1,14 @@
 "use client"
 import { Button } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import axios from "axios";
 import Swal from "sweetalert2";
-import { redirect } from "next/navigation";
 import { useRouter } from 'next/navigation'
+import Reval from "@/utils/Reval";
+// import { revalidateTag } from "next/cache";
 
 const Delete = ({ id, recipe_name }) => {
     const router = useRouter();
     console.log(id);
-
     const handleDelete = (id) => {
         console.log(id);
         Swal.fire({
@@ -36,21 +35,15 @@ const Delete = ({ id, recipe_name }) => {
                             text: `You Deleted ${recipe_name}`,
                             icon: "success"
                         });
+
                         router.push('/')
                     }
                 })
                     .catch(err => {
                         console.log(err);
                     })
-                // const res = await axios.delete(`http://localhost:4000/all_recipes?id=${id}`);
-                // console.log(res);
-                // if (res.data.deletedCount > 0) {
-                //     Swal.fire({
-                //         title: "Deleted!",
-                //         text: `You Deleted ${recipe_name}`,
-                //         icon: "success"
-                //     });
-                // }
+
+
             }
         });
     }

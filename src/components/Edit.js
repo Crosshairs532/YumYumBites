@@ -6,6 +6,7 @@ import { Input, Textarea } from "@material-tailwind/react";
 import { getRecipe } from "@/utils/getRecipe";
 import axios from "axios";
 import { pathRecipes } from "@/utils/pathRecipes";
+import Swal from "sweetalert2";
 const Edit = ({ singleMeal }) => {
     console.log(singleMeal);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -15,7 +16,15 @@ const Edit = ({ singleMeal }) => {
         );
         // const res = await axios.patch(`http://localhost:4000/all_recipes?id=${singleMeal[0]?._id}`, updatedRecipe);
         const res = await pathRecipes(updatedRecipe, singleMeal[0]?._id)
-
+        if (res.modifiedCount > 0) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "recipe updated",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
     }
     return (
         <div>
